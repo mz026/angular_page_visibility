@@ -10,7 +10,8 @@
     "grunt": "~0.4.5",
     "karma": "~0.12.22",
     "karma-jasmine": "~0.1.5",
-    "karma-chrome-launcher": "~0.1.4"
+    "karma-chrome-launcher": "~0.1.4",
+    "grunt-contrib-coffee": "~0.11.1"
   },
   "author": "",
   "license": "MIT"
