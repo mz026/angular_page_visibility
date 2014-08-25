@@ -7,11 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "coffee-script": "^1.7.1",
     "grunt": "^0.4.5",
     "grunt-contrib-coffee": "~0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "karma": "~0.12.22",
     "karma-chrome-launcher": "~0.1.4",
+    "karma-coffee-preprocessor": "^0.2.1",
     "karma-jasmine": "~0.1.5"
   },
   "author": "",
