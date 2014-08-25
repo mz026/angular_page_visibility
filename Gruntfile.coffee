@@ -1,5 +1,6 @@
 module.exports = (grunt)->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.initConfig
     coffee:
@@ -9,10 +10,15 @@ module.exports = (grunt)->
           watch: true
         files: [
           expand: true
-          src: 'src/**/*.coffee'
+          cwd: 'src/'
+          src: '**/*.coffee'
           dest: 'js/'
           ext: '.js'
         ]
+    watch:
+      src:
+        files: [ 'src/**/*' ]
+        tasks: [ 'coffee' ]
 
-  grunt.registerTask 'default', ->
-    console.log('hihihi')
+
+  grunt.registerTask 'default', ['coffee', 'watch']
