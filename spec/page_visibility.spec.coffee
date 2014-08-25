@@ -1,6 +1,6 @@
 describe 'Page Visibility', ->
+  $document = null
   beforeEach module 'angular-page-visibility'
 
-  it 'should pass', ->
-    expect(true).toBe(false)
-
+  it 'should pass', inject ($pageVisibility)->
+    
