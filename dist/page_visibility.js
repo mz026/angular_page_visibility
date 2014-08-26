@@ -14,6 +14,9 @@
           return ['webkitHidden', 'webkitvisibilitychange'];
         }
       };
+      if (!getVisibilityKeys()) {
+        return pageVisibility;
+      }
       _ref = getVisibilityKeys(), hiddenKey = _ref[0], visibilityChagedKey = _ref[1];
       $document.on(visibilityChagedKey, function() {
         if ($document.attr(hiddenKey)) {

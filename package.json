@@ -1,6 +1,6 @@
 {
   "name": "angular_page_visibility",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "angularjs interface of page visibility API",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "angular_page_visibility",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/page_visibility.min.js",
   "authors": [
     "Yang-Hsing Lin <yanghsing.lin@gmail.com>"
