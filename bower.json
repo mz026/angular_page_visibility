@@ -16,6 +16,7 @@
   "dependencies": {},
   "devDependencies": {
     "angular": "1.2.22",
-    "angular-mocks": "1.2.22"
+    "angular-mocks": "1.2.22",
+    "sinonjs": "~1.10.2"
   }
 }
