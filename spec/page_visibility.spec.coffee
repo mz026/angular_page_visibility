@@ -17,52 +17,33 @@ describe 'Page Visibility', ->
     $provide.value('$document', $document)
     null
 
-  describe 'when document visibility is controlled by `hidden`', ->
-    it '$broadcast-s `pageFocused` when page turn visible', ->
-      inject (_$document_)->
-        $document._setAttr('hidden', false)
+  ensurePageVisibilityEventsWith = (hiddenKey, visibilityChagedKey)->
+    describe "when document visibility is controlled by `#{hiddenKey}`", ->
+      it '$broadcast-s `pageFocused` when page turn visible', ->
+        inject (_$document_)->
+          $document._setAttr(hiddenKey, false)
 
-      inject ($pageVisibility)->
-        onFocused = sinon.spy()
-        $pageVisibility.$on('pageFocused', onFocused)
+        inject ($pageVisibility)->
+          onFocused = sinon.spy()
+          $pageVisibility.$on('pageFocused', onFocused)
 
-        $document._trigger('visibilitychange')
+          $document._trigger(visibilityChagedKey)
 
-        expect(onFocused.called).toBe(true)
+          expect(onFocused.called).toBe(true)
 
-    it '$broadcast-s `pageBlurred` when page turns invisible', ->
-      inject (_$document_)->
-        $document._setAttr('hidden', true)
+      it '$broadcast-s `pageBlurred` when page turns invisible', ->
+        inject (_$document_)->
+          $document._setAttr(hiddenKey, true)
 
-      inject ($pageVisibility)->
-        onBlurred = sinon.spy()
-        $pageVisibility.$on('pageBlurred', onBlurred)
+        inject ($pageVisibility)->
+          onBlurred = sinon.spy()
+          $pageVisibility.$on('pageBlurred', onBlurred)
 
-        $document._trigger('visibilitychange')
+          $document._trigger(visibilityChagedKey)
 
-        expect(onBlurred.called).toBe(true)
-    
-  describe 'when document visibility is controlled by `mozHidden`', ->
-    it '$broadcast-s `pageFocused` when page turn visible', ->
-      inject (_$document_)->
-        $document._setAttr('mozHidden', false)
+          expect(onBlurred.called).toBe(true)
 
-      inject ($pageVisibility)->
-        onFocused = sinon.spy()
-        $pageVisibility.$on('pageFocused', onFocused)
-
-        $document._trigger('mozvisibilitychange')
-
-        expect(onFocused.called).toBe(true)
-
-    it '$broadcast-s `pageBlurred` when page turns invisible', ->
-      inject (_$document_)->
-        $document._setAttr('mozHidden', true)
-
-      inject ($pageVisibility)->
-        onBlurred = sinon.spy()
-        $pageVisibility.$on('pageBlurred', onBlurred)
-
-        $document._trigger('mozvisibilitychange')
-
-        expect(onBlurred.called).toBe(true)
+  ensurePageVisibilityEventsWith('hidden', 'visibilitychange')
+  ensurePageVisibilityEventsWith('mozHidden', 'mozvisibilitychange')
+  ensurePageVisibilityEventsWith('msHidden', 'msvisibilitychange')
+  ensurePageVisibilityEventsWith('webkitHidden', 'webkitvisibilitychange')

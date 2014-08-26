@@ -7,6 +7,10 @@ angular.module('angular-page-visibility', [])
         [ 'hidden', 'visibilitychange' ]
       else if typeof($document.attr('mozHidden')) != 'undefined'
         [ 'mozHidden', 'mozvisibilitychange' ]
+      else if typeof($document.attr('msHidden')) != 'undefined'
+        [ 'msHidden', 'msvisibilitychange' ]
+      else if typeof($document.attr('webkitHidden')) != 'undefined'
+        [ 'webkitHidden', 'webkitvisibilitychange' ]
 
     [hiddenKey, visibilityChagedKey] = getVisibilityKeys()
 
