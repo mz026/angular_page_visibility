@@ -12,6 +12,8 @@ angular.module('angular-page-visibility', [])
       else if typeof($document.attr('webkitHidden')) != 'undefined'
         [ 'webkitHidden', 'webkitvisibilitychange' ]
 
+    return pageVisibility unless getVisibilityKeys()
+
     [hiddenKey, visibilityChagedKey] = getVisibilityKeys()
 
     $document.on(visibilityChagedKey, ->
@@ -20,9 +22,6 @@ angular.module('angular-page-visibility', [])
       else
         pageVisibility.$broadcast('pageFocused')
     )
-
-    
-
 
     pageVisibility
   ])

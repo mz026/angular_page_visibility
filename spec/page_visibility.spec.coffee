@@ -47,3 +47,7 @@ describe 'Page Visibility', ->
   ensurePageVisibilityEventsWith('mozHidden', 'mozvisibilitychange')
   ensurePageVisibilityEventsWith('msHidden', 'msvisibilitychange')
   ensurePageVisibilityEventsWith('webkitHidden', 'webkitvisibilitychange')
+
+  it 'does nothing if the browser does not support page visibility API', ->
+    inject ($pageVisibility)->
+
