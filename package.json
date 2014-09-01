@@ -1,10 +1,10 @@
 {
   "name": "angular_page_visibility",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "angularjs interface of page visibility API",
   "main": "index.js",
   "scripts": {
-    "test": "grunt karma:unit"
+    "test": "grunt karma:single"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
@@ -20,6 +20,12 @@
     "karma-coffee-preprocessor": "^0.2.1",
     "karma-jasmine": "~0.1.5"
   },
-  "author": "",
+  "author": [
+    { "name": "Yang-Hsing Lin", "email": "yanghsing.lin@gmail.com" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mz026/angular_page_visibility.git"
+  },
   "license": "MIT"
 }
