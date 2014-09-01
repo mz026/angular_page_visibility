@@ -1,4 +1,4 @@
-# Angular Page Visibility: a Page Visibility API interface for Angular
+## Angular Page Visibility: a Page Visibility API interface for Angular
 `angular-page-visibility` is a tiny lib which integrate [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/Guide/User_experience/Using_the_Page_Visibility_API) with Angular. 
 
 It is exposed as a scope, which `$broadcast`-s `pageFocused` and `pageBlurred` when page is focused / blurred.
@@ -24,7 +24,7 @@ angular.module('app')
 
 1. include the script:
 ```html
-<script src="https://raw.githubusercontent.com/mz026/angular_page_visibility/v0.0.2/dist/page_visibility.min.js" type="text/javascript"></script>
+<script src="https://raw.githubusercontent.com/mz026/angular_page_visibility/v0.0.3/dist/page_visibility.min.js" type="text/javascript"></script>
 ```
 
 2. include the module:
