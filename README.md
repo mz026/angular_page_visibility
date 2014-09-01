@@ -22,12 +22,17 @@ angular.module('app')
 
 ## Installation
 
-1. include the script:
-```html
-<script src="https://raw.githubusercontent.com/mz026/angular_page_visibility/v0.0.3/dist/page_visibility.min.js" type="text/javascript"></script>
-```
+1) include script: script can be included via `bower` or downloading directly
 
-2. include the module:
+  - via bower: 
+  `$ bower install angular-page-visibility`
+
+  - download directly
+  ```html
+  <script src="https://raw.githubusercontent.com/mz026/angular_page_visibility/v0.0.3/dist/page_visibility.min.js" type="text/javascript"></script>
+  ```
+
+2) include the module:
 
 ```javascript
 angular.app('myApp', [ 'angular-page-visibility' ])
