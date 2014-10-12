@@ -3,13 +3,13 @@ angular.module('angular-page-visibility', [])
     pageVisibility = $rootScope.$new()
 
     getVisibilityKeys = ->
-      if typeof($document.attr('hidden')) != 'undefined'
+      if typeof($document.prop('hidden')) != 'undefined'
         [ 'hidden', 'visibilitychange' ]
-      else if typeof($document.attr('mozHidden')) != 'undefined'
+      else if typeof($document.prop('mozHidden')) != 'undefined'
         [ 'mozHidden', 'mozvisibilitychange' ]
-      else if typeof($document.attr('msHidden')) != 'undefined'
+      else if typeof($document.prop('msHidden')) != 'undefined'
         [ 'msHidden', 'msvisibilitychange' ]
-      else if typeof($document.attr('webkitHidden')) != 'undefined'
+      else if typeof($document.prop('webkitHidden')) != 'undefined'
         [ 'webkitHidden', 'webkitvisibilitychange' ]
 
     return pageVisibility unless getVisibilityKeys()
@@ -17,7 +17,7 @@ angular.module('angular-page-visibility', [])
     [hiddenKey, visibilityChagedKey] = getVisibilityKeys()
 
     $document.on(visibilityChagedKey, ->
-      if $document.attr(hiddenKey)
+      if $document.prop(hiddenKey)
         pageVisibility.$broadcast('pageBlurred')
       else
         pageVisibility.$broadcast('pageFocused')
