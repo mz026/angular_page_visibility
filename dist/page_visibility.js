@@ -4,13 +4,13 @@
       var getVisibilityKeys, hiddenKey, pageVisibility, visibilityChagedKey, _ref;
       pageVisibility = $rootScope.$new();
       getVisibilityKeys = function() {
-        if (typeof ($document.attr('hidden')) !== 'undefined') {
+        if (typeof ($document.prop('hidden')) !== 'undefined') {
           return ['hidden', 'visibilitychange'];
-        } else if (typeof ($document.attr('mozHidden')) !== 'undefined') {
+        } else if (typeof ($document.prop('mozHidden')) !== 'undefined') {
           return ['mozHidden', 'mozvisibilitychange'];
-        } else if (typeof ($document.attr('msHidden')) !== 'undefined') {
+        } else if (typeof ($document.prop('msHidden')) !== 'undefined') {
           return ['msHidden', 'msvisibilitychange'];
-        } else if (typeof ($document.attr('webkitHidden')) !== 'undefined') {
+        } else if (typeof ($document.prop('webkitHidden')) !== 'undefined') {
           return ['webkitHidden', 'webkitvisibilitychange'];
         }
       };
@@ -19,7 +19,7 @@
       }
       _ref = getVisibilityKeys(), hiddenKey = _ref[0], visibilityChagedKey = _ref[1];
       $document.on(visibilityChagedKey, function() {
-        if ($document.attr(hiddenKey)) {
+        if ($document.prop(hiddenKey)) {
           return pageVisibility.$broadcast('pageBlurred');
         } else {
           return pageVisibility.$broadcast('pageFocused');
