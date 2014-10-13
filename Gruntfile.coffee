@@ -49,5 +49,5 @@ module.exports = (grunt)->
 
 
   grunt.registerTask 'dev', [ 'coffee', 'watch' ]
-  grunt.registerTask 'build', [ 'karma:single', 'copy', 'uglify' ]
+  grunt.registerTask 'build', [ 'karma:single', 'coffee', 'copy', 'uglify' ]
   grunt.registerTask 'default', [ 'dev' ]
