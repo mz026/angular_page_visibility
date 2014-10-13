@@ -9,6 +9,8 @@ describe 'Page Visibility', ->
         @attrs[key] = val
       attr: (key)->
         @attrs[key]
+      prop: (key)->
+        @attrs[key]
       on: (eventName, cb)->
         @events[eventName] = cb
       _trigger: (eventName)->
